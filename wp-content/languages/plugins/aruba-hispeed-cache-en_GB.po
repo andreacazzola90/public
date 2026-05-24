@@ -1,0 +1,107 @@
+# Translation of Plugins - Aruba HiSpeed Cache - Stable (latest release) in English (UK)
+# This file is distributed under the same license as the Plugins - Aruba HiSpeed Cache - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2024-08-08 15:01:17+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: en_GB\n"
+"Project-Id-Version: Plugins - Aruba HiSpeed Cache - Stable (latest release)\n"
+
+#. translators: %2$s: the guide url.
+#: admin/pages/views/partials/sections/section-ahsc-service-status.php:37
+#: src/AHSC_Check.php:284
+msgid "<strong>The HiSpeed Cache service is not enabled.</strong> To activate it, go to your domain <a href=\"%1$s\" rel=\"nofollow\" target=\"_blank\">control panel</a> (verifying the status may take up to 15 minutes). For further details <a href=\"%2$s\" rel=\"nofollow\" target=\"_blank\">see our guide</a>."
+msgstr "<strong>The HiSpeed Cache service is not enabled.</strong> To activate it, go to your domain <a href=\"%1$s\" rel=\"nofollow\" target=\"_blank\">control panel</a> (verifying the status may take up to 15 minutes). For further details <a href=\"%2$s\" rel=\"nofollow\" target=\"_blank\">see our guide</a>."
+
+#: admin/pages/views/admin-settings-new.php:43
+msgid "Debug"
+msgstr "Debug"
+
+#. translators: %s: the min php version required.
+#: src/AHSC_Version.php:43
+msgid "Sorry, Aruba HiSpeed Cache requires PHP %s or higher."
+msgstr "Sorry, Aruba HiSpeed Cache requires PHP %s or higher."
+
+#. Description of the plugin
+#: aruba-hispeed-cache.php
+msgid "Aruba HiSpeed Cache interfaces directly with the Aruba HiSpeed Cache service of the Aruba hosting platform and automates its management."
+msgstr "Aruba HiSpeed Cache interfaces directly with the Aruba HiSpeed Cache service of the Aruba hosting platform and automates its management."
+
+#: aruba-hispeed-cache.php:164 aruba-hispeed-cache.php:174
+#: aruba-hispeed-cache.php:182 aruba-hispeed-cache.php:192
+msgid "An error occurred. Please try again later or contact support."
+msgstr "An error occurred. Please try again later or contact support."
+
+#: aruba-hispeed-cache.php:169
+msgid "Cache purged."
+msgstr "Cache purged."
+
+#: admin/AHSC_Admin_Bar.php:32 admin/AHSC_Admin_Bar.php:102
+msgid "Purge page cache"
+msgstr "Purge page cache"
+
+#: src/AHSC_Functions.php:107
+msgid "Customer support"
+msgstr "Customer support"
+
+#. Plugin URI of the plugin
+#: aruba-hispeed-cache.php
+msgid "https://hosting.aruba.it/wordpress.aspx"
+msgstr "https://hosting.aruba.it/wordpress.aspx"
+
+#. translators: %s: the hosting truck url.
+#: admin/pages/views/partials/sections/section-ahsc-service-status.php:71
+#: src/AHSC_Check.php:323
+msgid "<strong>The Aruba HiSpeed Cache plugin cannot be used because your WordPress website is not hosted on an Aruba hosting platform.</strong> Buy an <a href=\"%s\" rel=\"nofollow\" target=\"_blank\">Aruba Hosting service</a> and migrate your website to use the plugin."
+msgstr "<strong>The Aruba HiSpeed Cache plugin cannot be used because your WordPress website is not hosted on an Aruba hosting platform.</strong> Buy an <a href=\"%s\" rel=\"nofollow\" target=\"_blank\">Aruba Hosting service</a> and migrate your website to use the plugin."
+
+#. translators: %s: the assistance url.
+#: admin/pages/views/partials/sections/section-ahsc-service-status.php:54
+#: src/AHSC_Check.php:304
+msgid "<strong>The HiSpeed Cache service with which the plugin interfaces is not available on the server that hosts your website.</strong> To use HiSpeed Cache and the plugin, please contact <a href=\"%s\" rel=\"nofollow\" target=\"_blank\">support</a>."
+msgstr "<strong>The HiSpeed Cache service with which the plugin interfaces is not available on the server that hosts your website.</strong> To use HiSpeed Cache and the plugin, please contact <a href=\"%s\" rel=\"nofollow\" target=\"_blank\">support</a>."
+
+#. Plugin Name of the plugin
+#: aruba-hispeed-cache.php admin/AHSC_Admin_Menu.php:13
+#: admin/AHSC_Admin_Menu.php:14 admin/pages/views/admin-settings-new.php:12
+msgid "Aruba HiSpeed Cache"
+msgstr "Aruba HiSpeed Cache"
+
+#. Author of the plugin
+#: aruba-hispeed-cache.php
+msgid "Aruba.it"
+msgstr "Aruba.it"
+
+#. Author URI of the plugin
+#: aruba-hispeed-cache.php
+msgid "https://www.aruba.it/"
+msgstr "https://www.aruba.it/"
+
+#: admin/pages/views/admin-settings-new.php:28
+msgid "Purge entire cache"
+msgstr "Purge entire cache"
+
+#. translators: %s: the wp min required version.
+#: src/AHSC_Version.php:15
+msgid "Sorry, Aruba HiSpeed Cache requires WordPress %s or higher."
+msgstr "Sorry, Aruba HiSpeed Cache requires WordPress %s or higher."
+
+#: admin/pages/AHSC_Page.php:37
+msgid "You are about to purge the entire cache. Do you want to continue?"
+msgstr "You are about to purge the entire cache. Do you want to continue?"
+
+#: admin/AHSC_Admin_Bar.php:37 admin/AHSC_Admin_Bar.php:105
+msgid "Purge Cache"
+msgstr "Purge Cache"
+
+#: src/AHSC_Functions.php:101
+msgid "Settings"
+msgstr "Settings"
+
+#: admin/pages/AHSC_Settings.php:12
+msgid "Sorry, you need to be an administrator to use HiSpeed Cache."
+msgstr "Sorry, you need to be an administrator to use HiSpeed Cache."
