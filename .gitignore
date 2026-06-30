@@ -1,3 +1,4 @@
 wp-content/plugins/*
 wp-content/backups-dup-lite/*
 wp-content/*
+!wp-content/plugins/themes/*
