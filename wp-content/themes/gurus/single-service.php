@@ -105,7 +105,7 @@ if ( class_exists( '\Elementor\Plugin' ) && isset( \Elementor\Plugin::$instance-
                                                         ?>
                                                         <li class="pxl-post-item">
                                                             <h5 class="pxl-post--title">
-                                                                <a class="pxl-item--link pxl-dark-100" href="<?php echo esc_url( get_permalink() ); ?>">
+                                                                <a class="pxl-item--link pxl-dark-100" href="<?php echo esc_url( add_query_arg( 'cat', $primary_cat->slug, get_permalink() ) ); ?>">
                                                                     <span class="pxl-item--icon">
                                                                         <?php if ( ! empty( $icon_font ) ) : ?>
                                                                             <i class="<?php echo esc_attr( $icon_font ); ?>"></i>

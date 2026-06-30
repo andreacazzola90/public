@@ -2000,7 +2000,7 @@ body.elementor-editor-active .pxl-row-scroll-fixed .pxl-column-sticky {
 }
 @media screen and (max-width: 767px) {
   #pxl-page-title-default .pxl-page-title {
-    font-size: 56px;
+    font-size: 36px;
   }
 }
 #pxl-footer-default {
@@ -16948,53 +16948,6 @@ body #yith-quick-view-modal #yith-quick-view-content .entry-summary .quantity .q
 }
 .pxl-showcase2 .pxl-item-content:hover .pxl-item--image::before {
   opacity: 1;
-}
-.pxl-recent-post .pxl-post-item {
-  padding: 0 6px;
-  position: relative;
-  overflow-x: hidden;
-}
-.pxl-recent-post .pxl-post-item:last-child .pxl-post--title {
-  border-bottom: 1px solid #85979b;
-}
-.pxl-recent-post .pxl-post--title {
-  padding-top: 14px;
-  padding-bottom: 15px;
-  border-top: 1px solid #85979b;
-}
-.pxl-recent-post .pxl-post--title a {
-  position: relative;
-  transition: 0.3s;
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  transform: translateX(-49px);
-}
-.pxl-recent-post .pxl-post--title a .pxl-item--icon {
-  overflow: hidden;
-  display: inline-flex;
-  align-items: center;
-  transition: 0.3s;
-  opacity: 0;
-  width: 34px;
-  min-width: 34px;
-  font-size: 36px;
-}
-.pxl-recent-post .pxl-post--title a .pxl-item--icon img, .pxl-recent-post .pxl-post--title a .pxl-item--icon svg, .pxl-recent-post .pxl-post--title a .pxl-item--icon i {
-  transition: inherit;
-}
-.pxl-recent-post .pxl-post--title a:hover, .pxl-recent-post .pxl-post--title a.current-post {
-  color: #547079;
-  transform: translateX(0) !important;
-}
-.pxl-recent-post .pxl-post--title a:hover .pxl-item--icon, .pxl-recent-post .pxl-post--title a.current-post .pxl-item--icon {
-  opacity: 1;
-}
-.pxl-recent-post .pxl-post--title a:hover .pxl-item--icon img, .pxl-recent-post .pxl-post--title a.current-post .pxl-item--icon img {
-  filter: brightness(0) saturate(100%) invert(40%) sepia(9%) saturate(1160%) hue-rotate(148deg) brightness(99%) contrast(83%);
-}
-.pxl-recent-post .pxl-post--title a:hover .pxl-item--icon svg path, .pxl-recent-post .pxl-post--title a.current-post .pxl-item--icon svg path, .pxl-recent-post .pxl-post--title a:hover .pxl-item--icon i path, .pxl-recent-post .pxl-post--title a.current-post .pxl-item--icon i path {
-  fill: #547079;
 }
 .pxl-countdown svg {
   display: none;

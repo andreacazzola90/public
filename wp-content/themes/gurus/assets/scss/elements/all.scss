@@ -2330,61 +2330,6 @@
     }
 }
 
-// Recent Post */
-.pxl-recent-post {
-    .pxl-post-item {
-        padding: 0 6px;
-        position: relative;
-        overflow-x: hidden;
-        &:last-child {
-            .pxl-post--title{
-                border-bottom: 1px solid #85979B;
-            }
-        }
-    }
-    .pxl-post--title {
-        padding-top: 14px;
-        padding-bottom: 15px;
-        border-top: 1px solid #85979B;
-        a {
-            position: relative;
-            transition: .3s;
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            transform: translateX(-49px);
-            .pxl-item--icon {
-                overflow: hidden;
-                display: inline-flex;
-                align-items: center;
-                transition: .3s;
-                opacity: 0;
-                width: 34px;
-                min-width: 34px;
-                font-size: 36px;
-                img, svg, i {
-                    transition: inherit;
-                }
-            }
-            &:hover, &.current-post{
-                color: #547079;
-                transform: translateX(0) !important;
-                .pxl-item--icon {
-                    opacity: 1;
-                    img {
-                        filter: brightness(0) saturate(100%) invert(40%) sepia(9%) saturate(1160%) hue-rotate(148deg) brightness(99%) contrast(83%);
-                    }
-                    svg, i{
-                        path {
-                            fill: #547079;
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
 
 // Countdown
 //--------------------------------------------------
