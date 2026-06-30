@@ -155,7 +155,7 @@ class MonsterInsights_Welcome {
 			)
 		);
 
-		$text_domain = monsterinsights_is_pro_version() ? 'google-analytics-premium' : 'google-analytics-for-wordpress';
+		$text_domain = monsterinsights_get_plugin_textdomain();
 
 		wp_scripts()->add_inline_script(
 			'monsterinsights-vue-script',

@@ -11,3 +11,90 @@ Template: gurus
 Text Domain: gurus-child
 Tags: business, consulting, consultant, agency, company, advertising, corporate, finance, financial, multipurpose, accountant, marketing, software, startup, modern, saas  
 */
+
+/* ============================================================
+   Service single page – improved body readability
+   ============================================================ */
+
+/* Outer wrapper: vertical breathing room */
+.pxl-service-single {
+    padding: 64px 0 80px;
+}
+
+/* Main content column */
+.pxl-service-content {
+    line-height: 1.85;
+    font-size: 1rem;
+}
+
+/* Paragraphs: restore the margin zeroed out by the parent theme */
+.pxl-service-content p {
+    margin-bottom: 1.5rem;
+}
+
+.pxl-service-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* Headings: clear section hierarchy */
+.pxl-service-content h2,
+.pxl-service-content h3,
+.pxl-service-content h4,
+.pxl-service-content h5,
+.pxl-service-content h6 {
+    margin-top: 2.75rem;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.pxl-service-content h2:first-child,
+.pxl-service-content h3:first-child,
+.pxl-service-content h4:first-child {
+    margin-top: 0;
+}
+
+/* H2 accent line */
+.pxl-service-content h2 {
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #e8e8e8;
+    margin-bottom: 1.25rem;
+}
+
+/* Ordered and unordered lists */
+.pxl-service-content ol,
+.pxl-service-content ul {
+    padding-left: 1.75rem;
+    margin-bottom: 1.5rem;
+}
+
+.pxl-service-content li {
+    margin-bottom: 0.5rem;
+    line-height: 1.75;
+}
+
+.pxl-service-content ol {
+    list-style: decimal;
+}
+
+.pxl-service-content ul {
+    list-style: disc;
+}
+
+/* Tables */
+.pxl-service-content table {
+    margin-bottom: 2rem;
+    font-size: 0.93rem;
+}
+
+/* Sidebar: top spacing on mobile when stacked below content */
+@media (max-width: 991px) {
+    .pxl-service-sidebar {
+        margin-top: 48px;
+    }
+}
+
+/* Sidebar recent-post list: a bit more breathing room */
+.pxl-service-sidebar .pxl-recent-post {
+    position: sticky;
+    top: 100px;
+}

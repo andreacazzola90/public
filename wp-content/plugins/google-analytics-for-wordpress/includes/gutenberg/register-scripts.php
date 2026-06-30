@@ -122,11 +122,14 @@ function monsterinsights_gutenberg_editor_assets() {
 		) )
 	);
 
-	$textdomain  = monsterinsights_is_pro_version() ? 'google-analytics-premium' : 'google-analytics-for-wordpress';
+	$textdomain = monsterinsights_get_plugin_textdomain();
 
-	wp_scripts()->add_inline_script(
+	wp_set_script_translations( 'monsterinsights-gutenberg-editor-js', $textdomain );
+
+	wp_add_inline_script(
 		'monsterinsights-gutenberg-editor-js',
-		monsterinsights_get_printable_translations( $textdomain )
+		monsterinsights_get_printable_translations( $textdomain ),
+		'before'
 	);
 
 }

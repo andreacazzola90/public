@@ -16,6 +16,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+/**
+ * Get the plugin text domain for the active MonsterInsights build.
+ *
+ * @return string
+ */
+function monsterinsights_get_plugin_textdomain() {
+	return monsterinsights_is_pro_version() ? 'google-analytics-premium' : 'google-analytics-for-wordpress';
+}
+
 function monsterinsights_get_url($medium = '', $campaign = '', $url = '', $escape = true)
 {
 	// Setup Campaign variables
@@ -200,7 +209,7 @@ function monsterinsights_get_browser_session_id( $measurement_id ) {
 /**
  * Generate UUID v4 function - needed to generate a CID when one isn't available
  *
- * @link http://www.stumiller.me/implementing-google-analytics-measurement-protocol-in-php-and-wordpress/
+ * @link https://www.stumiller.me/implementing-google-analytics-measurement-protocol-in-php-and-wordpress/
  *
  * @since 6.1.8
  * @return string
@@ -1376,7 +1385,7 @@ function monsterinsights_get_printable_translations( $domain ) {
 
 	// Encode with proper handling for Spanish characters
 	$json_translations = wp_json_encode( $locale_data, JSON_UNESCAPED_UNICODE );
-	
+
 	// Fallback if wp_json_encode fails
 	if ( false === $json_translations ) {
 		return '';
@@ -1414,7 +1423,7 @@ function monsterinsights_get_printable_translations( $domain ) {
 		$json_translations
 	);
 
-	return "\n<script type=\"text/javascript\">\n" . $script . "\n</script>\n";
+	return "\n" . $script . "\n";
 }
 function monsterinsights_get_inline_menu_icon() {
 	$scheme          = get_user_option( 'admin_color', get_current_user_id() );
@@ -1597,8 +1606,8 @@ function monsterinsights_detect_tracking_code_error( $body ) {
 	$current_code = monsterinsights_get_v4_id_to_output();
 
 	$url = monsterinsights_get_url( 'notice', 'using-cache', 'https://www.wpbeginner.com/beginners-guide/how-to-clear-your-cache-in-wordpress/' );
-	/* translators: the placeholders are for making the "We noticed you're using a caching plugin" text bold. */
 	$cache_error = sprintf(
+		/* translators: %1$s: Opening bold tag, %2$s: Closing bold tag, %3$s: Opening link tag, %4$s: Closing link tag. */
 		esc_html__( '%1$sWe noticed you\'re using a caching plugin or caching from your hosting provider.%2$s Be sure to clear the cache to ensure the tracking appears on all pages and posts. %3$s(See this guide on how to clear cache)%4$s.', 'google-analytics-for-wordpress' ),
 		'<b>',
 		'</b>',

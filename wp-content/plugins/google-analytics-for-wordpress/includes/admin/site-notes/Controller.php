@@ -815,8 +815,8 @@ class MonsterInsights_SiteNotes_Controller {
 
 			// Skip if note is empty.
 			if ( empty( $note_details['note'] ) ) {
-				/* translators: %s: annotation ID */
 				$errors[] = sprintf(
+					/* translators: %s: annotation ID */
 					__(
 						'Skipped annotation with empty title (ID: %s)',
 						'google-analytics-for-wordpress'
@@ -830,8 +830,8 @@ class MonsterInsights_SiteNotes_Controller {
 			$note_id = $this->create_note( $note_details );
 
 			if ( is_wp_error( $note_id ) ) {
-				/* translators: %1$s: annotation title, %2$s: error message */
 				$errors[] = sprintf(
+					/* translators: %1$s: annotation title, %2$s: error message */
 					__(
 						'Failed to import annotation "%1$s": %2$s',
 						'google-analytics-for-wordpress'
@@ -849,8 +849,8 @@ class MonsterInsights_SiteNotes_Controller {
 		}
 
 		// Prepare response message.
-		/* translators: %d: number of annotations successfully imported */
 		$message = sprintf(
+			/* translators: %d: number of annotations successfully imported */
 			__(
 				'Successfully imported %d annotations.',
 				'google-analytics-for-wordpress'
@@ -859,16 +859,16 @@ class MonsterInsights_SiteNotes_Controller {
 		);
 
 		if ( $skipped_count > 0 ) {
-			/* translators: %d: number of annotations skipped */
 			$message .= ' ' . sprintf(
+				/* translators: %d: number of annotations skipped */
 				__( '%d annotations were skipped (already exist).', 'google-analytics-for-wordpress' ),
 				$skipped_count
 			);
 		}
 
 		if ( ! empty( $errors ) ) {
-			/* translators: %d: number of annotations that failed to import */
 			$message .= ' ' . sprintf(
+				/* translators: %d: number of annotations that failed to import */
 				__(
 					'%d annotations could not be imported.',
 					'google-analytics-for-wordpress'

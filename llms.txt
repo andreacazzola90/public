@@ -48,8 +48,8 @@ WordPress Description
 
 ## Templates
 
+- [Hearder 1 Main](http://leax.local/pxl-template/main-hearder-1-2/) - Scarica la nostra brochure info@leax.it 3202508341 Hai delle domande? Facebook Whatsapp EnglishItaliano Home Servizi Tutti i servizi Consulenza ingegneristica Attività operative Blog Contatti Scarica la Brochure
 - [Footer 1 Main](http://leax.local/pxl-template/main-footer/) - Servizi Consulenza ingegneristica Attività operative Pagine Tutti i servizi Consulenza ingegneristica Attività operative Blog © Copyright@ BravisThemes. All rights reserved Facebook Whatsapp
-- [Hearder 1 Main](http://leax.local/pxl-template/main-hearder-1-2/) - Scarica la nostra brochure info@leax.it 3202508341 Hai delle domande? Facebook Whatsapp Home Servizi Tutti i servizi Consulenza ingegneristica Attività operative Blog Contatti Scarica la Brochure
 - [Header 1 Sticky](http://leax.local/pxl-template/header-1-sticky/) - Home Servizi Tutti i servizi Consulenza ingegneristica Attività operative Blog Contatti Scarica la Brochure 3202508341 Hai delle domande?
 - [Panel Content Light](http://leax.local/pxl-template/panel-content-light/) - Gurus – Business Consulting WordPress Theme Contact Info Mon - Frd : 8:00 -16:00 +020.098.456 11 gurusservices@email.com Office Address 28 Valencia Street, New York United States of America
 - [Page Title Default](http://leax.local/pxl-template/page-title-default/) - Page Title Default

@@ -139,8 +139,8 @@ class MonsterInsights_Connect {
 	 * Process MonsterInsights Connect.
 	 */
 	public function process() {
-		/* translators: link tag starts with url and link tag ends. */
 		$error = sprintf(
+			/* translators: %1$s: Opening link tag, %2$s: Closing link tag. */
 			esc_html__( 'Oops! We could not automatically install an upgrade. Please install manually by visiting %1$smonsterinsights.com%2$s.', 'google-analytics-for-wordpress' ),
 			'<a target="_blank" href="' . monsterinsights_get_url( 'notice', 'could-not-upgrade', 'https://www.monsterinsights.com/' ) . '">',
 			'</a>'

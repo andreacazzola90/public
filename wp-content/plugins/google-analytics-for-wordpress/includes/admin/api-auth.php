@@ -85,8 +85,8 @@ final class MonsterInsights_API_Auth {
 		check_ajax_referer( 'mi-admin-nonce', 'nonce' );
 		// current user can authenticate
 		if ( ! current_user_can( 'monsterinsights_save_settings' ) ) {
-			/* translators: link tag starts with url, link tag ends. */
 			$message = sprintf(
+				/* translators: %1$s: Opening link tag, %2$s: Closing link tag. */
 				__( 'You don\'t have the correct WordPress user permissions to authenticate into MonsterInsights. Please check with your site administrator that your role is included in the MonsterInsights permissions settings. %1$sClick here for more information%2$s.', 'google-analytics-for-wordpress' ),
 				'<a target="_blank" href="' . monsterinsights_get_url( 'notice', 'cannot-save-settings', 'https://www.monsterinsights.com/docs/how-to-allow-user-roles-to-access-the-monsterinsights-reports-and-settings/' ) . '">',
 				'</a>'
@@ -108,16 +108,16 @@ final class MonsterInsights_API_Auth {
 
 		// we do not have a current auth
 		if ( ! $this->is_network_admin() && MonsterInsights()->auth->is_authed() ) {
-			/* translators: support link tag starts with url, Support link tag ends. */
 			$message = sprintf(
+				/* translators: %1$s: Opening support link tag, %2$s: Closing support link tag. */
 				__( 'Oops! There has been an error authenticating. Please try again in a few minutes. If the problem persists, please %1$scontact our support%2$s team.', 'google-analytics-for-wordpress' ),
 				'<a target="_blank" href="' . monsterinsights_get_url( 'notice', 'error-authenticating', 'https://www.monsterinsights.com/my-account/support/' ) . '">',
 				'</a>'
 			);
 			wp_send_json_error( array( 'message' => $message ) );
 		} else if ( $this->is_network_admin() && MonsterInsights()->auth->is_network_authed() ) {
-			/* translators: support link tag starts with url, Support link tag ends. */
 			$message = sprintf(
+				/* translators: %1$s: Opening support link tag, %2$s: Closing support link tag. */
 				__( 'Oops! There has been an error authenticating. Please try again in a few minutes. If the problem persists, please %1$scontact our support%2$s team.', 'google-analytics-for-wordpress' ),
 				'<a target="_blank" href="' . monsterinsights_get_url( 'notice', 'error-authenticating', 'https://www.monsterinsights.com/my-account/support/' ) . '">',
 				'</a>'
@@ -264,11 +264,6 @@ final class MonsterInsights_API_Auth {
 		MonsterInsights()->reporting->delete_aggregate_data( $where );
 		monsterinsights_flag_flush_cache_registry();
 
-		if ( class_exists( 'MonsterInsights_Google_Ads' ) ) {
-			// Clear any Google Ads stored data
-			MonsterInsights_Google_Ads::clear_data();
-		}
-
 		// Check site and property timezone.
 		$this->check_property_timezone();
 
@@ -292,8 +287,8 @@ final class MonsterInsights_API_Auth {
 
 		// current user can authenticate
 		if ( ! current_user_can( 'monsterinsights_save_settings' ) ) {
-			/* translators: link tag starts with url and link tag ends. */
 			$message = sprintf(
+				/* translators: %1$s: Opening link tag, %2$s: Closing link tag. */
 				__( 'You don\'t have the correct WordPress user permissions to re-authenticate into MonsterInsights. Please check with your site administrator that your role is included in the MonsterInsights permissions settings. %1$sClick here for more information%2$s.', 'google-analytics-for-wordpress' ),
 				'<a target="_blank" href="' . monsterinsights_get_url( 'notice', 'cannot-save-settings', 'https://www.monsterinsights.com/docs/how-to-allow-user-roles-to-access-the-monsterinsights-reports-and-settings/' ) . '">',
 				'</a>'
@@ -315,8 +310,8 @@ final class MonsterInsights_API_Auth {
 
 		// we do have a current auth
 		if ( ! $this->is_network_admin() && ! MonsterInsights()->auth->is_authed() ) {
-			/* translators: wizard Link tag starts with url, Wizard link tag ends, Support link tag starts, Support link tag ends. */
 			$message = sprintf(
+				/* translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag, %3$s: Opening support link tag, %4$s: Closing support link tag. */
 				__( 'Oops! There was a problem while re-authenticating. Please try to complete the MonsterInsights %1$ssetup wizard%2$s again. If the problem persists, please %3$scontact our support%4$s team.', 'google-analytics-for-wordpress' ),
 				'<a href="' . esc_url( $url ) . '">',
 				'</a>',
@@ -325,8 +320,8 @@ final class MonsterInsights_API_Auth {
 			);
 			wp_send_json_error( array( 'message' => $message ) );
 		} else if ( $this->is_network_admin() && ! MonsterInsights()->auth->is_network_authed() ) {
-			/* translators: wizard Link tag starts with url, Wizard link tag ends, Support link tag starts, Support link tag ends. */
 			$message = sprintf(
+				/* translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag, %3$s: Opening support link tag, %4$s: Closing support link tag. */
 				__( 'Oops! There was a problem while re-authenticating. Please try to complete the MonsterInsights %1$ssetup wizard%2$s again. If the problem persists, please %3$scontact our support%4$s team.', 'google-analytics-for-wordpress' ),
 				'<a href="' . esc_url( $url ) . '">',
 				'</a>',
@@ -433,11 +428,6 @@ final class MonsterInsights_API_Auth {
 		MonsterInsights()->reporting->delete_aggregate_data( $where );
 		monsterinsights_flag_flush_cache_registry();
 
-		if ( class_exists( 'MonsterInsights_Google_Ads' ) ) {
-			// Clear any Google Ads stored data
-			MonsterInsights_Google_Ads::clear_data();
-		}
-
 		// Check site and property timezone.
 		$this->check_property_timezone();
 
@@ -460,8 +450,8 @@ final class MonsterInsights_API_Auth {
 
 		// current user can verify
 		if ( ! current_user_can( 'monsterinsights_save_settings' ) ) {
-			/* translators: link tag starts with url and link tag ends. */
 			$message = sprintf(
+				/* translators: %1$s: Opening link tag, %2$s: Closing link tag. */
 				__( 'You don\'t have the correct user permissions to verify the MonsterInsights license you are trying to use. Please check with your site administrator that your role is included in the MonsterInsights permissions settings. %1$sClick here for more information%2$s.', 'google-analytics-for-wordpress' ),
 				'<a target="_blank" rel="noopener" href="' . monsterinsights_get_url( 'notice', 'cannot-save-settings', 'https://www.monsterinsights.com/docs/how-to-allow-user-roles-to-access-the-monsterinsights-reports-and-settings/' ) . '">',
 				'</a>'
@@ -475,16 +465,16 @@ final class MonsterInsights_API_Auth {
 
 		// we have an auth to verify
 		if ( $this->is_network_admin() && ! MonsterInsights()->auth->is_network_authed() ) {
-			/* translators: support Link tag starts with url and Support link tag ends. */
 			$message = sprintf(
+				/* translators: %1$s: Opening link tag, %2$s: Closing link tag. */
 				__( 'Please enter a valid license within the MonsterInsights settings panel. You can check your license by logging into your MonsterInsights account by %1$sclicking here%2$s.', 'google-analytics-for-wordpress' ),
 				'<a target="_blank" rel="noopener" href="' . monsterinsights_get_url( 'notice', 'cannot-verify-license', 'https://www.monsterinsights.com/my-account/' ) . '">',
 				'</a>'
 			);
 			wp_send_json_error( array( 'message' => $message ) );
 		} else if ( ! $this->is_network_admin() && ! MonsterInsights()->auth->is_authed() ) {
-			/* translators: support Link tag starts with url and Support link tag ends. */
 			$message = sprintf(
+				/* translators: %1$s: Opening link tag, %2$s: Closing link tag. */
 				__( 'Please enter a valid license within the MonsterInsights settings panel. You can check your license by logging into your MonsterInsights account by %1$sclicking here%2$s.', 'google-analytics-for-wordpress' ),
 				'<a target="_blank" rel="noopener" href="' . monsterinsights_get_url( 'notice', 'cannot-verify-license', 'https://www.monsterinsights.com/my-account/' ) . '">',
 				'</a>'
@@ -495,8 +485,8 @@ final class MonsterInsights_API_Auth {
 		if ( monsterinsights_is_pro_version() ) {
 			$valid = is_network_admin() ? MonsterInsights()->license->is_network_licensed() : MonsterInsights()->license->is_site_licensed();
 			if ( ! $valid ) {
-				/* translators: support Link tag starts with url and Support link tag ends. */
 				$message = sprintf(
+					/* translators: %1$s: Opening link tag, %2$s: Closing link tag. */
 					__( 'Please enter a valid license within the MonsterInsights settings panel. You can check your license by logging into your MonsterInsights account by %1$sclicking here%2$s.', 'google-analytics-for-wordpress' ),
 					'<a target="_blank" rel="noopener" href="' . monsterinsights_get_url( 'notice', 'cannot-verify-license', 'https://www.monsterinsights.com/my-account/' ) . '">',
 					'</a>'
@@ -509,8 +499,8 @@ final class MonsterInsights_API_Auth {
 		if ( $worked && ! is_wp_error( $worked ) ) {
 			wp_send_json_success( array( 'message' => __( "Successfully verified.", 'google-analytics-for-wordpress' ) ) );
 		} else {
-			/* translators: support Link tag starts with url and Support link tag ends. */
 			$message = sprintf(
+				/* translators: %1$s: Opening support link tag, %2$s: Closing support link tag. */
 				__( 'Oops! There has been an error while trying to verify your license. Please try again or contact our support team by %1$sclicking here%2$s.', 'google-analytics-for-wordpress' ),
 				'<a target="_blank" href="' . monsterinsights_get_url( 'notice', 'cannot-verify-license', 'https://www.monsterinsights.com/my-account/support/' ) . '">',
 				'</a>'
@@ -523,8 +513,8 @@ final class MonsterInsights_API_Auth {
 		$creds = ! empty( $credentials ) ? $credentials : ( $this->is_network_admin() ? MonsterInsights()->auth->get_network_analytics_profile( true ) : MonsterInsights()->auth->get_analytics_profile( true ) );
 
 		if ( empty( $creds['key'] ) ) {
-			/* translators: support Link tag starts with url and Support link tag ends. */
 			$message = sprintf(
+				/* translators: %1$s: Opening support link tag, %2$s: Closing support link tag. */
 				__( 'Oops! There has been an error while trying to verify your license. Please try again or contact our support team by %1$sclicking here%2$s.', 'google-analytics-for-wordpress' ),
 				'<a target="_blank" href="' . monsterinsights_get_url( 'notice', 'cannot-verify-license', 'https://www.monsterinsights.com/my-account/support/' ) . '">',
 				'</a>'
@@ -560,8 +550,8 @@ final class MonsterInsights_API_Auth {
 
 		// current user can delete
 		if ( ! current_user_can( 'monsterinsights_save_settings' ) ) {
-			/* translators: link tag starts with url and link tag ends. */
 			$message = sprintf(
+				/* translators: %1$s: Opening link tag, %2$s: Closing link tag. */
 				__( 'You don\'t have the correct WordPress user permissions to deauthenticate into MonsterInsights. Please check with your site administrator that your role is included in the MonsterInsights permissions settings. %1$sClick here for more information%2$s.', 'google-analytics-for-wordpress' ),
 				'<a target="_blank" href="' . monsterinsights_get_url( 'notice', 'cannot-save-settings', 'https://www.monsterinsights.com/docs/how-to-allow-user-roles-to-access-the-monsterinsights-reports-and-settings/' ) . '">',
 				'</a>'
@@ -575,8 +565,8 @@ final class MonsterInsights_API_Auth {
 
 		// we have an auth to delete
 		if ( $this->is_network_admin() && ! MonsterInsights()->auth->is_network_authed() ) {
-			/* translators: setup Wizard link tag starts, Setup Wizard link tag end, Support link tag starts with url and support link tag ends. */
 			$message = sprintf(
+				/* translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag, %3$s: Opening support link tag, %4$s: Closing support link tag. */
 				__( 'Could not disconnect as you are not currently authenticated properly. Please try to authenticate again with our MonsterInsights %1$ssetup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team.', 'google-analytics-for-wordpress' ),
 				'<a href="' . esc_url( $url ) . '">',
 				'</a>',
@@ -585,8 +575,8 @@ final class MonsterInsights_API_Auth {
 			);
 			wp_send_json_error( array( 'message' => $message ) );
 		} else if ( ! $this->is_network_admin() && ! MonsterInsights()->auth->is_authed() ) {
-			/* translators: setup Wizard link tag starts, Setup Wizard link tag end, Support link tag starts with url and support link tag ends. */
 			$message = sprintf(
+				/* translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag, %3$s: Opening support link tag, %4$s: Closing support link tag. */
 				__( 'Could not disconnect as you are not currently authenticated properly. Please try to authenticate again with our MonsterInsights %1$ssetup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team.', 'google-analytics-for-wordpress' ),
 				'<a href="' . esc_url( $url ) . '">',
 				'</a>',
@@ -599,8 +589,8 @@ final class MonsterInsights_API_Auth {
 		if ( monsterinsights_is_pro_version() ) {
 			$valid = is_network_admin() ? MonsterInsights()->license->is_network_licensed() : MonsterInsights()->license->is_site_licensed();
 			if ( ! $valid ) {
-				/* translators: setup Wizard link tag starts, Setup Wizard link tag end, Support link tag starts with url and support link tag ends. */
 				$message = sprintf(
+					/* translators: %1$s: Opening wizard link tag, %2$s: Closing wizard link tag, %3$s: Opening support link tag, %4$s: Closing support link tag. */
 					__( 'Could not disconnect your account, as you are not currently authenticated properly. Please try to authenticate again with our %1$sMonsterInsights setup wizard%2$s.  If you are still having problems, please %3$scontact our support%4$s team.', 'google-analytics-for-wordpress' ),
 					'<a href="' . esc_url( $url ) . '">',
 					'</a>',
@@ -615,18 +605,13 @@ final class MonsterInsights_API_Auth {
 
 		$worked = $this->delete_auth( $force );
 		if ( $worked && ! is_wp_error( $worked ) ) {
-			if ( class_exists( 'MonsterInsights_Google_Ads' ) ) {
-				// Clear any Google Ads stored data
-				MonsterInsights_Google_Ads::clear_data();
-			}
-			
 			wp_send_json_success( array( 'message' => __( "Successfully deauthenticated.", 'google-analytics-for-wordpress' ) ) );
 		} else {
 			if ( $force ) {
 				wp_send_json_success( array( 'message' => __( "Successfully force deauthenticated.", 'google-analytics-for-wordpress' ) ) );
 			} else {
-				/* translators: support link tag starts with url and support link tag ends. */
 				$message = sprintf(
+					/* translators: %1$s: Opening support link tag, %2$s: Closing support link tag. */
 					__( 'Oops! There has been an error while trying to deauthenticate. Please try again. If the issue persists, please %1$scontact our support%2$s team.', 'google-analytics-for-wordpress' ),
 					'<a target="_blank" href="' . monsterinsights_get_url( 'notice', 'cannot-de-authenticate-license', 'https://www.monsterinsights.com/my-account/support/' ) . '">',
 					'</a>'
@@ -848,8 +833,8 @@ final class MonsterInsights_API_Auth {
 					'start'    => $wp_time_now->format( 'Y-m-d H:i:s' ),
 					'end'      => $wp_time_now->modify( "+1 month" )->format( 'Y-m-d' ),
 					'title'    => esc_html__( 'Website & Google Analytics Timezone Mismatch', 'google-analytics-for-wordpress' ),
-					/* translators: placeholders add a link to the settings page. */
 					'content'  => sprintf(
+						/* translators: %1$s: Opening link tag, %2$s: Closing link tag. */
 						esc_html__( 'We detected your Google Analytics property is set to a different timezone than your website. This may slightly impact your stats, especially when comparing day over day performance. You may want to adjust your website\'s time zone %1$shere%2$s.', 'google-analytics-for-wordpress' ),
 						'<a href="' . admin_url( 'options-general.php' ) . '">',
 						'</a>'
@@ -884,16 +869,16 @@ final class MonsterInsights_API_Auth {
 		}
 
 		if ( ! $this->is_network_admin() && MonsterInsights()->auth->is_authed() ) {
-			/* translators: support link tag starts with url, Support link tag ends. */
 			$message = sprintf(
+				/* translators: %1$s: Opening support link tag, %2$s: Closing support link tag. */
 				__( 'Oops! There has been an error authenticating. Please try again in a few minutes. If the problem persists, please %1$scontact our support%2$s team.', 'google-analytics-for-wordpress' ),
 				'<a target="_blank" href="' . monsterinsights_get_url( 'notice', 'error-authenticating', 'https://www.monsterinsights.com/my-account/support/' ) . '">',
 				'</a>'
 			);
 			wp_send_json_error( array( 'message' => $message ) );
 		} else if ( $this->is_network_admin() && MonsterInsights()->auth->is_network_authed() ) {
-			/* translators: support link tag starts with url, Support link tag ends. */
 			$message = sprintf(
+				/* translators: %1$s: Opening support link tag, %2$s: Closing support link tag. */
 				__( 'Oops! There has been an error authenticating. Please try again in a few minutes. If the problem persists, please %1$scontact our support%2$s team.', 'google-analytics-for-wordpress' ),
 				'<a target="_blank" href="' . monsterinsights_get_url( 'notice', 'error-authenticating', 'https://www.monsterinsights.com/my-account/support/' ) . '">',
 				'</a>'

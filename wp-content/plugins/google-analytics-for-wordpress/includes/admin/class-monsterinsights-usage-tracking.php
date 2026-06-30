@@ -147,17 +147,6 @@ class MonsterInsights_Usage_Tracking {
 		$data['inactive_plugins'] = wp_json_encode( $plugins );
 		$data['locale']           = get_locale();
 
-		// Add Google Ads page form data, if available
-		$google_ads_settings = monsterinsights_get_option('monsterinsights_google_ads_settings');
-
-		if ( isset($google_ads_settings['physical_products']) ) {
-			$data['google_ads_physical_products'] = $google_ads_settings['physical_products'] ? 'yes' : 'no';
-		}
-
-		if ( isset($google_ads_settings['user_onboarded']) ) {
-			$data['google_ads_user_onboarded'] = $google_ads_settings['user_onboarded'] ? 'yes' : 'no';
-		}
-
 		return $data;
 	}
 

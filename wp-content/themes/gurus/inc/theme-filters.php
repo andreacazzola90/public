@@ -106,6 +106,14 @@ function gurus_support_default_cpt($postypes){
 	return $postypes; // pxl-template
 }
 
+// Force Gutenberg block editor for the service post type.
+add_filter( 'use_block_editor_for_post_type', function( $use_block_editor, $post_type ) {
+	if ( 'service' === $post_type ) {
+		return true;
+	}
+	return $use_block_editor;
+}, 20, 2 );
+
 add_filter( 'pxl_extra_post_types', 'gurus_add_post_type' );
 function gurus_add_post_type( $postypes ) {
 	$portfolio_display = gurus()->get_theme_opt('portfolio_display', true);
@@ -141,9 +149,10 @@ function gurus_add_post_type( $postypes ) {
 		'item_name'  => $service_name,
 		'items_name' => $service_name,
 		'args'       => array(
-			'rewrite'             => array(
-                'slug'       => $service_slug,
+			'rewrite'         => array(
+                'slug'    => $service_slug,
  		 	),
+			'show_in_rest'    => true,
 		),
 	);
   
@@ -193,9 +202,10 @@ function gurus_add_tax( $taxonomies ) {
 		'taxonomy'   => 'Service Categories',
 		'taxonomies' => 'Service Categories',
 		'args'       => array(
-			'rewrite'             => array(
-                'slug'       => 'service-category'
+			'rewrite'      => array(
+                'slug' => 'service-category'
  		 	),
+			'show_in_rest' => true,
 		),
 		'labels'     => array()
 	);

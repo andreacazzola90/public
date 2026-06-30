@@ -1623,9 +1623,6 @@ ul {
   padding: 0;
   margin: 0 0 32px;
 }
-ul li {
-  list-style-position: inside;
-}
 dl + h2 + ul {
   padding-left: 35px;
 }
@@ -1947,6 +1944,7 @@ body.elementor-editor-active .pxl-row-scroll-fixed .pxl-column-sticky {
   height: 650px;
   position: relative;
   width: 100%;
+  padding-inline: 2rem;
 }
 @media screen and (max-width: 1200px) {
   #pxl-page-title-default {

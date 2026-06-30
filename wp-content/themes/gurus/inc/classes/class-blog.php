@@ -28,6 +28,7 @@ if (!class_exists('Gurus_Blog')) {
 
         public function get_post_metas(){
             $post_author = gurus()->get_theme_opt( 'post_author', true );
+            $post_date = gurus()->get_theme_opt( 'post_date', true );
             if($post_author || $post_date) : ?>
                 <div class="pxl-item--meta pxl-flex">
                     <?php if($post_author) : ?>

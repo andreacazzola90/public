@@ -85,8 +85,8 @@ class MonsterInsights_Report {
 		if ( monsterinsights_is_pro_version() ) {
 			if ( ! MonsterInsights()->license->has_license() ) {
 				$url = is_network_admin() ? network_admin_url( 'admin.php?page=monsterinsights_settings' ) : admin_url( 'admin.php?page=monsterinsights_settings' );
-				/* translators: placeholders add a link to the settings panel, Support link tag starts with url and support link tag ends. */
 				$message = sprintf(
+					/* translators: %1$s: Opening settings link tag, %2$s: Closing settings link tag, %3$s: Opening support link tag, %4$s: Closing support link tag. */
 					esc_html__( 'Oops! We did not find an active MonsterInsights license. Please %1$scheck your license settings%2$s or %3$scontact our support team%4$s for help.', 'google-analytics-for-wordpress' ),
 					'<a href="' . $url . '">',
 					'</a>',

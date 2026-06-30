@@ -126,9 +126,9 @@ class MonsterInsights_Review {
 			<div class="monsterinsights-review-step">
 				<p>
 					<?php
-					/* translators: %1$s: plugin name (MonsterInsights) */
 					echo wp_kses(
 						sprintf(
+							/* translators: %1$s: plugin name (MonsterInsights). */
 							__( 'Hey - we noticed you\'ve been using %1$s for a while - that\'s great! Could you do us a BIG favor and give it a 5-star review on WordPress to help us spread the word and boost our motivation?', 'google-analytics-for-wordpress' ),
 							'<strong>MonsterInsights</strong>'
 						),

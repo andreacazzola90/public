@@ -71,6 +71,40 @@ if (!class_exists('Gurus_Main')) {
             return $this->option_name;
         }
 
+        protected function get_fallback_option_names(){
+            $option_names = [];
+            $current_option_name = $this->get_option_name();
+
+            if(function_exists('apply_filters')){
+                $default_language = apply_filters('wpml_default_language', null);
+                if(!empty($default_language)){
+                    $default_option_name = $this->option_name . '_' . $default_language;
+                    if($default_option_name !== $current_option_name){
+                        $option_names[] = $default_option_name;
+                    }
+                }
+            }
+
+            if($this->option_name !== $current_option_name && !in_array($this->option_name, $option_names, true)){
+                $option_names[] = $this->option_name;
+            }
+
+            return $option_names;
+        }
+
+        protected function get_fallback_theme_opt_value($setting){
+            $fallback_option_names = $this->get_fallback_option_names();
+
+            foreach($fallback_option_names as $fallback_option_name){
+                $fallback_options = get_option($fallback_option_name, []);
+                if(isset($fallback_options[$setting]) && $fallback_options[$setting] !== ''){
+                    return $fallback_options[$setting];
+                }
+            }
+
+            return null;
+        }
+
         public function get_name(){
             $theme = wp_get_theme();
             if( $theme->parent_theme ) {
@@ -105,10 +139,15 @@ if (!class_exists('Gurus_Main')) {
             }
  
             if (empty(self::$options) || ! isset( self::$options[ $setting ] ) || self::$options[ $setting ] === ''){
-                if ( $subset && !empty($subset)) 
-                    return $default[$subset];
-                else
-                    return $default;
+                $fallback_value = $this->get_fallback_theme_opt_value($setting);
+                if($fallback_value !== null){
+                    self::$options[$setting] = $fallback_value;
+                }else{
+                    if ( $subset && !empty($subset)) 
+                        return $default[$subset];
+                    else
+                        return $default;
+                }
             }
  
             if(is_array(self::$options[$setting])) {

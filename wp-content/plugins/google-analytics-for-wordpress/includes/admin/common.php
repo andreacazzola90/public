@@ -41,10 +41,6 @@ function monsterinsights_is_settings_page() {
 		$settings_page = true;
 	}
 
-	if ( strpos( $current_screen->id, 'monsterinsights_google_ads' ) !== false ) {
-		$settings_page = true;
-	}
-
 	if ( ! empty( $current_screen->base ) && strpos( $current_screen->base, 'monsterinsights_network' ) !== false ) {
 		$settings_page = true;
 	}
@@ -100,14 +96,6 @@ function monsterinsights_is_own_admin_page() {
 	}
 
 	return false;
-}
-
-/**
- * Determine if the current page is Google Ads
- * @return bool
- */
-function monsterinsights_is_ads_page() {
-	return str_contains( get_current_screen()->id, 'monsterinsights_google_ads' );
 }
 
 /**

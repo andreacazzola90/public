@@ -15,3 +15,38 @@ Copyright (c) 2024 Bravis-Themes. All rights reserved.
 This theme is licensed under the GPL-2.0+ license.
 */
 
+/* ── Single Service: centered title ───────────────────────────────────────── */
+.pxl--service .pxl-service--title {
+    text-align: center;
+    padding: 3rem 2rem 1.5rem;
+    margin: 0 auto;
+    color: #19272B;
+}
+
+@media (max-width: 767px) {
+    .pxl--service .pxl-service--title {
+        font-size: 1.6rem;
+        line-height: 1.3;
+        padding: 1.75rem 1rem 1rem;
+    }
+}
+
+/* ── Single Service: hero image ────────────────────────────────────────────── */
+.pxl-service--hero-img {
+    margin-bottom: 1.5rem;
+}
+.pxl-service--hero-img img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    display: block;
+}
+
+/* ── Single Service: introductory text ─────────────────────────────────────── */
+.pxl-service--intro {
+    font-style: italic;
+    font-size: 1.1rem;
+    line-height: 1.65;
+    color: #547079;
+    margin-bottom: 1.5rem;
+}

@@ -49,9 +49,10 @@ if (!class_exists('Gurus_Page')) {
                     </div>
                 <?php endif; ?>
             <?php } elseif($pt_mode == 'df') {
-                $ptitle_breadcrumb_on = gurus()->get_opt( 'ptitle_breadcrumb_on', '1' ); ?>
+                $ptitle_breadcrumb_on = gurus()->get_opt( 'ptitle_breadcrumb_on', '1' );
+                $featured_img_url = get_the_post_thumbnail_url( get_queried_object_id(), 'full' ); ?>
                 <div id="pxl-page-title-default" >
-                    <div class="pxl-bg--img pxl--parallax"></div>
+                    <div class="pxl-bg--img pxl--parallax"<?php if ( $featured_img_url ) : ?> style="background-image: url('<?php echo esc_url( $featured_img_url ); ?>')"<?php endif; ?>></div>
                     <h1 class="pxl-page-title"><?php echo gurus_html($titles['title']) ?></h1>
                 </div>
             <?php } 

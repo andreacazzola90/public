@@ -52,11 +52,10 @@ class MonsterInsights_Admin_Assets {
 	 */
 	public function __construct() {
 		global $wp_version;
-		// This filter will only run if WP version is greater than 6.4.0.
+		// The wp_script_attributes filter was introduced in WP 6.4. Fall back to script_loader_tag on older versions.
 		if ( version_compare( $wp_version, '6.4', '>=' ) ) {
 			add_filter( 'wp_script_attributes', array( $this, 'set_scripts_as_type_module' ), 99999 );
 		} else {
-			// Use script_loader_tag if WordPress version is lower than 5.7.0.
 			add_filter( 'script_loader_tag', array( $this, 'script_loader_tag' ), 99999, 3 );
 		}
 
@@ -85,22 +84,15 @@ class MonsterInsights_Admin_Assets {
 	}
 
 	/**
-	 * Update script tag.
-	 * The vue code needs type=module.
+	 * Update script tag for WP < 6.4 — Vue code needs type=module.
 	 */
 	public function script_loader_tag( $tag, $handle, $src ) {
 
-		if ( ! in_array( $handle, $this->own_handles ) ) {
+		if ( ! in_array( $handle, $this->own_handles, true ) ) {
 			return $tag;
 		}
 
-		// Change the script tag by adding type="module" and return it.
-		$html = str_replace( '></script>', ' type="module"></script>', $tag );
-
-		$domain = monsterinsights_is_pro_version() ? 'google-analytics-premium' : 'google-analytics-for-wordpress';
-		$html   = monsterinsights_get_printable_translations( $domain ) . $html;
-
-		return $html;
+		return str_replace( '></script>', ' type="module"></script>', $tag );
 	}
 
 	/**
@@ -220,7 +212,7 @@ class MonsterInsights_Admin_Assets {
 		}
 
 		$version_path = monsterinsights_is_pro_version() ? 'pro' : 'lite';
-		$text_domain  = monsterinsights_is_pro_version() ? 'google-analytics-premium' : 'google-analytics-for-wordpress';
+		$text_domain  = monsterinsights_get_plugin_textdomain();
 
 		$license      = MonsterInsights()->license;
 		$license_info = array(
