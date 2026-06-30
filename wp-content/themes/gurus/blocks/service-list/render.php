@@ -50,7 +50,7 @@ ob_start();
             $icon_img  = get_post_meta( $post_id, 'service_icon_img', true );
             $post_link = get_post_meta( $post_id, 'service_external_link', true );
             if ( empty( $post_link ) ) {
-                $post_link = get_permalink();
+                $post_link = add_query_arg( 'cat', $category_slug, get_permalink() );
             }
 
             // Subtitle: use post_excerpt first, then extract from content if empty.

@@ -3,7 +3,7 @@ Theme Name: Gurus Child
 Theme URI: http://demo.bravisthemes.com/gurus
 Author: Bravis-Themes
 Author URI: https://themeforest.net/user/bravis-themes/portfolio
-Description: Gurus is created to provide modern solution for any business type. The theme is packed with large collection of beautifully designed homepages and a large number of inner page styles. Also, there are versatile and easily tailored portfolio templates that will give you full freedom to create the showcase you need. Moreover, Gurus looks flawless on all devices, so your content will look equally amazing across all device types. Whether you need a personal theme or professional theme, Gurus can be a perfect fit. Get it today and discover all the features one WordPress site needs.
+Description: Gurus is created to provide modern solution for any business type. The theme is packed with large collection of beautifully designed homepages and a large number of inner page styles. Also, there are versatile and easily tailored portfolio templates that will give you full freedom to create the showcase you need. Moreover, Gurus looks flawless on all devices, so your content will look equally amazing across all device types. Whether you need a personal theme or professional theme, Gurus can be a perfect fit. Get it today and discover all the features one WordPress needs.
 Version: 1.0.6
 License: ThemeForest
 License URI: https://themeforest.net/licenses
@@ -13,38 +13,39 @@ Tags: business, consulting, consultant, agency, company, advertising, corporate,
 */
 
 /* ============================================================
-   Service single page – improved body readability
+   Service single page – typography & readability
    ============================================================ */
 
-/* Outer wrapper: vertical breathing room */
 .pxl-service-single {
-    padding: 64px 0 80px;
+    padding: 72px 0 96px;
 }
 
-/* Main content column */
+/* ── Main content column ── */
 .pxl-service-content {
-    line-height: 1.85;
-    font-size: 1rem;
+    font-size: 1.0625rem;      /* ~17 px – easier on the eyes */
+    line-height: 1.9;
+    color: #3a3a3a;
+    max-width: 72ch;           /* keeps line-length comfortable */
 }
 
-/* Paragraphs: restore the margin zeroed out by the parent theme */
 .pxl-service-content p {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.6rem;
 }
 
 .pxl-service-content p:last-child {
     margin-bottom: 0;
 }
 
-/* Headings: clear section hierarchy */
+/* Headings */
 .pxl-service-content h2,
 .pxl-service-content h3,
 .pxl-service-content h4,
 .pxl-service-content h5,
 .pxl-service-content h6 {
-    margin-top: 2.75rem;
+    margin-top: 3rem;
     margin-bottom: 1rem;
     line-height: 1.3;
+    color: #1a1a2e;
 }
 
 .pxl-service-content h2:first-child,
@@ -53,23 +54,31 @@ Tags: business, consulting, consultant, agency, company, advertising, corporate,
     margin-top: 0;
 }
 
-/* H2 accent line */
 .pxl-service-content h2 {
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #e8e8e8;
-    margin-bottom: 1.25rem;
+    font-size: 1.6rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 2px solid #e4e7ec;
+    margin-bottom: 1.4rem;
 }
 
-/* Ordered and unordered lists */
+.pxl-service-content h3 {
+    font-size: 1.3rem;
+}
+
+.pxl-service-content h4 {
+    font-size: 1.1rem;
+}
+
+/* Lists */
 .pxl-service-content ol,
 .pxl-service-content ul {
-    padding-left: 1.75rem;
-    margin-bottom: 1.5rem;
+    padding-left: 1.8rem;
+    margin-bottom: 1.6rem;
 }
 
 .pxl-service-content li {
-    margin-bottom: 0.5rem;
-    line-height: 1.75;
+    margin-bottom: 0.55rem;
+    line-height: 1.8;
 }
 
 .pxl-service-content ol {
@@ -80,21 +89,258 @@ Tags: business, consulting, consultant, agency, company, advertising, corporate,
     list-style: disc;
 }
 
-/* Tables */
-.pxl-service-content table {
-    margin-bottom: 2rem;
-    font-size: 0.93rem;
+/* Blockquote */
+.pxl-service-content blockquote {
+    margin: 2.25rem 0;
+    padding: 1.25rem 1.75rem;
+    border-left: 4px solid #2563eb;
+    background: #f0f4ff;
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: #4b5563;
 }
 
-/* Sidebar: top spacing on mobile when stacked below content */
+.pxl-service-content blockquote p {
+    margin-bottom: 0;
+}
+
+/* Horizontal rule */
+.pxl-service-content hr {
+    margin: 2.5rem 0;
+    border: none;
+    border-top: 1.5px solid #e4e7ec;
+}
+
+/* Tables */
+.pxl-service-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+    font-size: 0.94rem;
+}
+
+.pxl-service-content th,
+.pxl-service-content td {
+    padding: 0.75rem 1rem;
+    border: 1px solid #e4e7ec;
+    text-align: left;
+}
+
+.pxl-service-content th {
+    background: #f8f9fb;
+    font-weight: 600;
+    color: #1a1a2e;
+}
+
+.pxl-service-content tbody tr:nth-child(even) td {
+    background: #f8f9fb;
+}
+
+/* Inline code */
+.pxl-service-content code {
+    font-size: 0.875em;
+    padding: 0.15em 0.45em;
+    background: #f0f4ff;
+    border-radius: 4px;
+    color: #2563eb;
+}
+
+/* ── Sidebar ── */
 @media (max-width: 991px) {
     .pxl-service-sidebar {
-        margin-top: 48px;
+        margin-top: 56px;
     }
 }
 
-/* Sidebar recent-post list: a bit more breathing room */
 .pxl-service-sidebar .pxl-recent-post {
     position: sticky;
     top: 100px;
+    background: #f8f9fb;
+    border: 1px solid #e4e7ec;
+    border-radius: 12px;
+    padding: 1.75rem;
+}
+
+/* Sidebar heading (added via PHP or present as widget title) */
+.pxl-service-sidebar .pxl-recent-post::before {
+    content: "Servizi correlati";
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #6b7280;
+    margin-bottom: 1.1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid #e4e7ec;
+}
+
+/* List reset */
+.pxl-service-sidebar .pxl-item--list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Each sidebar item */
+.pxl-service-sidebar .pxl-post-item {
+    margin-bottom: 0;
+}
+
+.pxl-service-sidebar .pxl-post-item + .pxl-post-item {
+    border-top: 1px solid #e4e7ec;
+}
+
+.pxl-service-sidebar .pxl-post--title {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+}
+
+.pxl-service-sidebar .pxl-item--link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 0.5rem;
+    color: #1a1a2e !important;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.18s ease, color 0.18s ease, padding-left 0.18s ease;
+}
+
+.pxl-service-sidebar .pxl-item--link:hover {
+    background: #eef2ff;
+    color: #2563eb !important;
+    padding-left: 0.9rem;
+}
+
+.pxl-service-sidebar .pxl-item--icon {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 1px solid #e4e7ec;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #2563eb;
+}
+
+.pxl-service-sidebar .pxl-item--icon img,
+.pxl-service-sidebar .pxl-item--icon svg {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* ============================================================
+   Service grid cards (gurus/service-list block)
+   ============================================================ */
+
+.gurus-service-list-block .pxl-grid-inner {
+    gap: 0;                    /* managed by Bootstrap gutter */
+}
+
+.gurus-service-list-block .pxl-post--inner {
+    background: #ffffff;
+    border: 1px solid #e4e7ec;
+    border-radius: 14px;
+    padding: 2rem 1.75rem 1.75rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow 0.22s ease, transform 0.22s ease, border-color 0.22s ease;
+}
+
+.gurus-service-list-block .pxl-post--inner:hover {
+    box-shadow: 0 8px 32px rgba(37, 99, 235, 0.10);
+    transform: translateY(-4px);
+    border-color: #bfcfff;
+}
+
+/* Icon area */
+.gurus-service-list-block .pxl-post-icon,
+.gurus-service-list-block .pxl-post--icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    background: #eef2ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.4rem;
+    font-size: 1.5rem;
+    color: #2563eb;
+    flex-shrink: 0;
+}
+
+.gurus-service-list-block .pxl-post--icon img,
+.gurus-service-list-block .pxl-post--icon svg {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+/* Title */
+.gurus-service-list-block .pxl-post--title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: 0.6rem;
+    color: #1a1a2e;
+}
+
+.gurus-service-list-block .pxl-post--title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.18s ease;
+}
+
+.gurus-service-list-block .pxl-post--title a:hover {
+    color: #2563eb;
+}
+
+/* Subtitle / excerpt */
+.gurus-service-list-block .pxl-post--subtitle,
+.gurus-service-list-block .pxl-post--excerpt {
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: #6b7280;
+    margin-bottom: 0;
+    flex-grow: 1;
+}
+
+/* Push the button to the bottom */
+.gurus-service-list-block .pxl-post-btn--wrap {
+    margin-top: 1.4rem;
+}
+
+/* "Scopri di più" button */
+.gurus-service-list-block .btn-readmore {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #2563eb !important;
+    background: transparent;
+    border: 1.5px solid #2563eb;
+    border-radius: 8px;
+    padding: 0.55rem 1.1rem;
+    text-decoration: none;
+    transition: background 0.18s ease, color 0.18s ease;
+}
+
+.gurus-service-list-block .btn-readmore:hover {
+    background: #2563eb;
+    color: #ffffff !important;
+}
+
+/* Grid item: equal-height cards */
+.gurus-service-list-block .pxl-grid-item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
 }

@@ -53,10 +53,27 @@ if ( class_exists( '\Elementor\Plugin' ) && isset( \Elementor\Plugin::$instance-
                         <!-- Right column: other services in the same category -->
                         <div class="col-lg-4 col-md-12 pxl-service-sidebar">
                             <?php
+                            // If a 'cat' query parameter was passed (e.g. from the mercato elettrico page),
+                            // validate it against actual terms and use it to filter the sidebar.
+                            $forced_cat_slug = isset( $_GET['cat'] ) ? sanitize_title( wp_unslash( $_GET['cat'] ) ) : '';
+                            $forced_cat_term = $forced_cat_slug ? get_term_by( 'slug', $forced_cat_slug, 'service-category' ) : false;
+
                             $service_cats = get_the_terms( $post_id, 'service-category' );
                             if ( ! empty( $service_cats ) && ! is_wp_error( $service_cats ) ) :
-                                // Use only the first (primary) category to avoid mixing unrelated categories.
-                                $primary_cat = reset( $service_cats );
+                                // Prefer the forced category (from URL) if it belongs to this service;
+                                // otherwise fall back to the first assigned category.
+                                $primary_cat = null;
+                                if ( $forced_cat_term ) {
+                                    foreach ( $service_cats as $sc ) {
+                                        if ( $sc->term_id === $forced_cat_term->term_id ) {
+                                            $primary_cat = $sc;
+                                            break;
+                                        }
+                                    }
+                                }
+                                if ( ! $primary_cat ) {
+                                    $primary_cat = reset( $service_cats );
+                                }
                                 $related_args = [
                                     'post_type'      => 'service',
                                     'posts_per_page' => -1,
